@@ -34,9 +34,245 @@
     font-style:italic;
 }
 
+/* Regular lighy */
+@font-face {
+    font-family:'Agenda';
+    src: url(../font/Agenda%20Light.TTF) format('truetype');
+    font-weight:300;
+    font-style:normal;
+}
+
+
 /*-----------
    STYLE
 -----------*/
+
+.none {
+    display: none;
+}
+
+/*-----------
+    HEADER
+-----------*/
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /*background: url('../image/header.png');*/
+    /*background-size: cover;*/
+    /*background-position: center center;*/
+    /*height: 100px;*/
+    z-index: 2;
+}
+
+header .bg {
+    max-width: 100%;
+}
+
+header .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 25%;
+}
+
+header .wrapper-animation {
+    position: absolute;
+    width: 102%;
+    transform: scaleX(-1) translate(2%, -258px) rotate(4deg);
+    transform-origin: center center;
+    height: 10px;
+}
+
+header .wrapper-animation .bar {
+    background-color: rgba(17, 17, 17, 1);
+    height: 5px;
+    width: 0%;
+}
+
+header .wrapper-animation .bar-1 {
+    height: 300px;
+    width: 100%;
+}
+
+header .wrapper-animation .bar-2 {
+     height: 3px;
+     background-color: rgba(17, 17, 17, 0.8);
+}
+
+header .wrapper-animation .bar-3 {
+    background-color: rgba(17, 17, 17, 1);
+}
+
+header .wrapper-animation .bar-4 {
+    height: 3px;
+    background-color: rgba(17, 17, 17, 0.6);
+}
+
+header .wrapper-animation .bar-5 {
+    background-color: rgba(17, 17, 17, 1);
+}
+
+header .wrapper-animation .bar-6 {
+    height: 3px;
+    background-color: rgba(17, 17, 17, 0.4);
+}
+
+header .wrapper-animation .bar-7 {
+    height: 3px;
+    background-color: rgba(17, 17, 17, 1);
+}
+
+header .wrapper-animation .bar-8 {
+    background-color: rgba(17, 17, 17, 0.6);
+}
+
+header .wrapper-animation .bar-9 {
+    background-color: rgba(17, 17, 17, 1);
+}
+
+header .wrapper-animation .bar-10 {
+    height: 3px;
+    background-color: rgba(17, 17, 17, 0.4);
+}
+
+header .wrapper-animation .bar-11 {
+    height: 3px;
+    background-color: rgba(17, 17, 17, 0.2);
+}
+
+header .wrapper-animation .bar-go {
+    width: 100%;
+    transition: 1s;
+    transition-timing-function: ease-in;
+}
+
+footer .wrapper-animation {
+    position: absolute;
+    width: 102%;
+    transform: scaleX(-1) translate(0%, 55px) rotate(-176deg);
+    transform-origin: center center;
+    height: 10px;
+}
+
+footer .wrapper-animation .bars {
+    background-color: rgba(17, 17, 17, 1);
+    height: 5px;
+    width: 0%;
+}
+
+footer .wrapper-animation .bar-1 {
+    height: 120px;
+    width: 100%;
+}
+
+footer .wrapper-animation .bar-2 {
+    height: 3px;
+    background-color: rgba(17, 17, 17, 0.8);
+}
+
+footer .wrapper-animation .bar-3 {
+    background-color: rgba(17, 17, 17, 1);
+}
+
+footer .wrapper-animation .bar-4 {
+    height: 3px;
+    background-color: rgba(17, 17, 17, 0.6);
+}
+
+footer .wrapper-animation .bar-5 {
+    background-color: rgba(17, 17, 17, 1);
+}
+
+footer .wrapper-animation .bar-6 {
+    height: 3px;
+    background-color: rgba(17, 17, 17, 0.4);
+}
+
+footer .wrapper-animation .bar-7 {
+    height: 3px;
+    background-color: rgba(17, 17, 17, 1);
+}
+
+footer .wrapper-animation .bar-8 {
+    background-color: rgba(17, 17, 17, 0.6);
+}
+
+footer .wrapper-animation .bar-9 {
+    background-color: rgba(17, 17, 17, 1);
+}
+
+footer .wrapper-animation .bar-10 {
+    height: 3px;
+    background-color: rgba(17, 17, 17, 0.4);
+}
+
+footer .wrapper-animation .bar-11 {
+    height: 3px;
+    background-color: rgba(17, 17, 17, 0.2);
+}
+
+footer .wrapper-animation .bar-go {
+    width: 100%;
+    transition: .8s;
+    transition-timing-function: ease-in;
+}
+
+
+/*-----------
+    FOOTER
+-----------*/
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    transition: 0.47s;
+}
+
+footer .bg {
+    max-width: 100%;
+    transform: rotate(180deg);
+    position: absolute;
+    bottom:0;
+}
+
+footer .carnet {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    width: 25%;
+    color: #f1f1f1;
+    text-align: right;
+    font-family: Agenda;
+    font-style: normal;
+    font-size: 30px;
+    transform: rotate(-4deg);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.47s;
+}
+
+footer .carnet-on {
+    transform: translateY(80px);
+    transition: 0.47s;
+}
+
+
+footer .carnet .arrow {
+    vertical-align: middle;
+    position: relative;
+    top: -5px;
+    transform: rotate(0deg);
+    transition: 0.47s;
+}
+
+footer .carnet .arrow-on {
+    transform: rotate(-180deg);
+    transition: 0.47s;
+}
 
 
 /*-----------
@@ -48,7 +284,7 @@
     font-style: normal;
     text-align: center;
     height: 100vh;
-    background-color: #222;
+    background-color: #111111;
     position: relative;
 }
 
@@ -86,6 +322,39 @@
     height: 100vh;
 }
 
+@media only screen and (max-width:1024px) {
+    .home h1 {
+        font-size: 50px;
+        color: rgba(255, 255, 255, 0.35);
+        font-weight: 700;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+    }
+
+    .home a {
+        font-family: Agenda;
+        font-size: 30px;
+        font-weight: 400;
+        color: #f1f1f1;
+        text-decoration: none;
+        background: url('../image/trace.png') center center no-repeat;
+        background-size: contain;
+        display: block;
+        width: 100%;
+        max-width: 560px;
+        height: 280px;
+        line-height: 280px;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+
 /*-----------
    INTRO
 -----------*/
@@ -96,7 +365,7 @@
     color: rgba(255, 255, 255, 0.3);
     text-align: center;
     height: 100vh;
-    background-color: #222;
+    background-color: #111111;
     position: relative;
 }
 
@@ -120,18 +389,13 @@
     MAP
 -----------*/
 
-/*<div class="intro-map">*/
-/*<h4>{{ data.MapIntroduction }}</h4>*/
-/*<a>{{ data.MapBegin }}</a>*/
-/*</div>*/
-
 .intro-map {
     position: fixed;
     height: 100vh;
     width: 100vw;
-    background-color: #222;
+    background-color: #111111;
     color: #f1f1f1;
-    z-index: 3;
+    z-index: 4;
     text-align: center;
 }
 
@@ -176,4 +440,158 @@
     display: none;
 }
 
+.board {
+    position: relative;
+    height: 100vh;
+    background-color: #111;
+    transform: translateY(-0px);
+    z-index: 2;
+    transition: 0.5s;
+    overflow: scroll;
+    font-size: 0;
+    padding-top: 25vh;
+}
 
+.board-open {
+    transform: translateY(-100vh);
+    transition: 0.5s;
+}
+
+.board-pict {
+    display: inline-block;
+    width: 25%;
+}
+
+.board-hover {
+    height: 240px;
+    width: 100%;
+    background-color: rgba(17, 17, 17, 0.7);
+    position: relative;
+    z-index: 10;
+    top: -240px;
+    margin-bottom: -240px;
+    transition: 0.2s;
+}
+
+
+.board-hover:hover {
+    background-color: rgba(17, 17, 17, 0.35);
+    transition: 0.2s;
+}
+
+.board img {
+    width: 100%;
+}
+
+.board .final {
+    font-family: Agenda;
+    font-size: 21px;
+    color: #8a8989;
+    text-align: center;
+    width: 35%;
+    margin: auto;
+    padding: 5%;
+}
+
+.board .go-final {
+    font-family: Agenda;
+    font-size: 21px;
+    color: #ec644b;
+    text-align: center;
+    width: 35%;
+    margin: auto;
+    padding: 5%;
+}
+
+.footer-open {
+    transform: translateY(-100vh);
+    transition: 0.5s;
+}
+
+
+@media only screen and (max-width:1024px) {
+
+    .intro-map a {
+        font-family: Agenda;
+        font-size: 30px;
+        font-weight: 400;
+        color: #f1f1f1;
+        text-decoration: none;
+        background: url('../image/trace.png') center center no-repeat;
+        background-size: contain;
+        display: block;
+        width: 100%;
+        max-width: 560px;
+        height: 280px;
+        line-height: 280px;
+        margin: auto;
+    }
+
+    .modal-info {
+        width: 100%;
+    }
+}
+
+
+/*-----------
+    STORY
+-----------*/
+
+.story {
+    font-size: 0;
+}
+
+.story .part {
+    display: inline-block;
+    width: 25%;
+    font-family: Agenda;
+    font-size: 30px;
+    font-weight: 400;
+    color: #f1f1f1;
+    background-color: #111111;
+    height: 100vh;
+    text-align: center;
+    background-size: cover;
+    vertical-align: top;
+    transition: 0.4s;
+}
+
+.story .open {
+    width: 100% !important;
+    background-size: contain !important;;
+    background-repeat: no-repeat !important;;
+    transition: 0.4s;
+}
+
+.story .close {
+    width: 0%;
+    transition: 0.4s;
+}
+
+.story .part .shadow {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.story .part:hover .shadow {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.story .part img {
+    margin-top: 300px;
+    margin-bottom: 70px;
+}
+
+.story .part h5 {
+    padding: 20px;
+}
+
+@media only screen and (max-width:1024px) {
+
+}

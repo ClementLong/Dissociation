@@ -43,7 +43,8 @@ $app->get('/map', function() use ($app)
 
     // View
     $data = array(
-        'data' => $MyprettyText
+        'data' => $MyprettyText,
+        'final' => '0'
     );
 
     return $app['twig']->render('pages/map.twig', $data);
@@ -76,7 +77,7 @@ $app->match('/cgd', function() use ($app)
 
     return $app['twig']->render('pages/cgd.twig', $data);
 })
-    ->bind('story');
+    ->bind('cgd');
 
 //
 //// Promo
