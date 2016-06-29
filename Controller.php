@@ -7,6 +7,8 @@
 
 use Model\Text;
 
+$UploadModel = new UploadModel();
+
 // Home
 $app->get('/', function() use ($app)
 {
@@ -77,6 +79,28 @@ $app->match('/cgd', function() use ($app)
     return $app['twig']->render('pages/cgd.twig', $data);
 })
     ->bind('story');
+
+// Experiences 
+$app->match('/experience/{id}', function($id) use ($app) {
+
+    $data = array(
+    );
+
+    return $app['twig']->render('pages/exp'.$id.'.twig', $data);
+})
+    ->assert('id', '\d')
+    ->bind('experience');
+
+// Experiences 
+$app->match('/upload', function() use ($app, $UploadModel) {
+
+    $upload       = $UploadModel->uploadImage();
+    $data = array();
+
+    return '/models/upload.php';
+})
+    ->bind('upload');
+
 
 //
 //// Promo
