@@ -1,5 +1,9 @@
 {% include '/partials/header.twig' %}
 
+<header>
+    <img src="{{ app.request.basepath }}/image/header.png" alt="1">
+</header>
+
 <div class="intro-map">
     <div class="wrapper">
         <h4>{{ data.MapIntroduction }}</h4>
@@ -7,15 +11,15 @@
         <a class="map-begin" href="#">{{ data.MapBegin }}</a>
     </div>
 </div>
-{#<div class="modal-info">#}
-    {#<img src="{{ app.request.basepath }}/image/shape.svg" class="cross">#}
-    {#<h4></h4>#}
-    {#<p></p>#}
-    {#<a href="" class="experience">Démarrer l'éxpérience</a>#}
-{#</div>#}
 <div class="container map">
     <div id="map"></div>
 </div>
+
+<footer>
+    <img src="{{ app.request.basepath }}/image/header.png" alt="1">
+</footer>
+
+
 
 <script type="text/javascript">
     $('.map-begin').on('click', function(){
