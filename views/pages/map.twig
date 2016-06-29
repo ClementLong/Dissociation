@@ -1,7 +1,20 @@
 {% include '/partials/header.twig' %}
 
 <header>
-    <img class="bg" src="{{ app.request.basepath }}/image/header.png" alt="1">
+    <div class="wrapper-animation">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+        <div class="bar bar-4"></div>
+        <div class="bar bar-5"></div>
+        <div class="bar bar-6"></div>
+        <div class="bar bar-7"></div>
+        <div class="bar bar-8"></div>
+        <div class="bar bar-9"></div>
+        <div class="bar bar-10"></div>
+        <div class="bar bar-11"></div>
+    </div>
+    {#<img class="bg" src="{{ app.request.basepath }}/image/header.png" alt="1">#}
     <img class="logo" src="{{ app.request.basepath }}/image/DISSOCIATION.png" alt="1">
 </header>
 
@@ -16,38 +29,94 @@
     <div id="map"></div>
 </div>
 <div class="board">
-
+    <img src="https://unsplash.it/300/200/?random" alt="">
+    <img src="https://unsplash.it/300/200/?random" alt="">
+    <img src="https://unsplash.it/300/200/?random" alt="">
+    <img src="https://unsplash.it/300/200/?random" alt="">
+    <img src="https://unsplash.it/300/200/?random" alt="">
+    <img src="https://unsplash.it/300/200/?random" alt="">
+    <img src="https://unsplash.it/300/200/?random" alt="">
+    {% if final %}
+        <div class="go-final">Conclure l'enquette</div>
+    {% else %}
+        <div class="final">Il vous faut encore plus d'indice pour conclure l'enquette</div>
+    {% endif %}
+    div
 </div>
 
 <footer>
-    <img class="bg" src="{{ app.request.basepath }}/image/header.png" alt="1">
-    <span class="carnet">Carnet de bord <img src="{{ app.request.basepath }}/image/chevron.svg" alt="1"></span>
+    <div class="wrapper-animation">
+        <div class="bars bar-1"></div>
+        <div class="bars bar-2"></div>
+        <div class="bars bar-3"></div>
+        <div class="bars bar-4"></div>
+        <div class="bars bar-5"></div>
+        <div class="bars bar-6"></div>
+        <div class="bars bar-7"></div>
+        <div class="bars bar-8"></div>
+        <div class="bars bar-9"></div>
+        <div class="bars bar-10"></div>
+        <div class="bars bar-11"></div>
+    </div>
+    {#<img class="bg" src="{{ app.request.basepath }}/image/header.png" alt="1">#}
+    <span class="carnet board-toggle">Carnet de bord <img class="arrow" src="{{ app.request.basepath }}/image/chevron.svg" alt="1"></span>
 </footer>
 
-
+<audio src="{{ app.request.basepath }}/media/song.mp3"></audio>
 
 <script type="text/javascript">
     $('.map-begin').on('click', function(){
         $('.intro-map').fadeOut(300);
+        var time = 300;
+        var time2 = 300;
+        $('.bar').each(function(){
+            setTimeout( function(){ $(this).addClass('bar-go');}.bind(this), time);
+            time += 90;
+        });
+        $('.bars').each(function(){
+            setTimeout( function(){ $(this).addClass('bar-go');}.bind(this), time2);
+            time2 += 90;
+        });
+        player.video.play();
     });
 
-    $('.carnet').on('click', function() {
+    var i = 1;
+
+    $('.board-toggle').on('click', function() {
         $('footer').toggleClass('footer-open');
         $('.board').toggleClass('board-open');
+        $('.carnet').toggleClass('carnet-on');
+        $('.arrow').toggleClass('arrow-on');
     });
 
-//    var $modal_info = $('.modal-info');
-//
-//    $('.cross').on('click', function(){
-//        $modal_info.fadeOut(300);
-//    });
-//
-//    var modalInfo = function(text, title, url){
-//        $modal_info.find('h4').text(title);
-//        $modal_info.find('p').text(text);
-//        $modal_info.find('.experience').attr('href', url);
-//        $modal_info.fadeIn(300);
-//    }
+    var player = {};
+
+    player.video        = document.querySelector('audio');
+
+    // Keyshort
+
+    window.addEventListener('keydown',function(e) {
+        if(e.keyCode == 32) {
+            e.preventDefault();
+            if (player.video.paused)
+                player.video.play();
+            else
+                player.video.pause();
+        }
+    }, false);
+
+    player.video.volume = 1;
+
+    window.addEventListener('keydown',function(e) {
+        if(e.keyCode == 77) {
+            e.preventDefault();
+            if(player.video.muted || player.video.volume == 0)
+                player.video.volume = 1;
+            else
+                player.video.volume = 0;
+        }
+    }, false);
+
 </script>
 <script type="text/javascript">
 

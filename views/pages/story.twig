@@ -1,5 +1,10 @@
 {% include '/partials/header.twig' %}
 
+<header>
+    <img class="bg" src="{{ app.request.basepath }}/image/header.png" alt="1">
+    <img class="logo" src="{{ app.request.basepath }}/image/DISSOCIATION.png" alt="1">
+</header>
+
 <div class="container story">
     <div class="part" style="background: url('{{ app.request.basepath }}/image/1.1.png');background-size: cover;background-position: center center;">
         <div class="shadow">
@@ -26,5 +31,40 @@
         </div>
     </div>
 </div>
+
+<audio src="{{ app.request.basepath }}/media/song.mp3"></audio>
+<script>
+    var player = {};
+
+    player.video        = document.querySelector('audio');
+
+    // Keyshort
+
+    window.addEventListener('keydown',function(e) {
+        if(e.keyCode == 32) {
+            e.preventDefault();
+            if (player.video.paused)
+                player.video.play();
+            else
+                player.video.pause();
+        }
+    }, false);
+
+    player.video.volume = 1;
+
+    window.addEventListener('keydown',function(e) {
+        if(e.keyCode == 77) {
+            e.preventDefault();
+            if(player.video.muted || player.video.volume == 0)
+                player.video.volume = 1;
+            else
+                player.video.volume = 0;
+        }
+    }, false);
+
+    window.setTimeout(function(){
+        player.video.play();
+    }, 200);
+</script>
 
 {% include('/partials/footer.twig') %}
