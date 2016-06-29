@@ -76,7 +76,7 @@ $app->match('/cgd', function() use ($app)
 
     return $app['twig']->render('pages/cgd.twig', $data);
 })
-    ->bind('story');
+    ->bind('cgd');
 
 //
 //// Promo
