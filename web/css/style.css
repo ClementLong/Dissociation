@@ -95,6 +95,39 @@
     height: 100vh;
 }
 
+@media only screen and (max-width:1024px) {
+    .home h1 {
+        font-size: 50px;
+        color: rgba(255, 255, 255, 0.35);
+        font-weight: 700;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+    }
+
+    .home a {
+        font-family: Agenda;
+        font-size: 30px;
+        font-weight: 400;
+        color: #f1f1f1;
+        text-decoration: none;
+        background: url('../image/trace.png') center center no-repeat;
+        background-size: contain;
+        display: block;
+        width: 100%;
+        max-width: 560px;
+        height: 280px;
+        line-height: 280px;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+
 /*-----------
    INTRO
 -----------*/
@@ -235,4 +268,25 @@
     display: none;
 }
 
+@media only screen and (max-width:1024px) {
 
+    .intro-map a {
+        font-family: Agenda;
+        font-size: 30px;
+        font-weight: 400;
+        color: #f1f1f1;
+        text-decoration: none;
+        background: url('../image/trace.png') center center no-repeat;
+        background-size: contain;
+        display: block;
+        width: 100%;
+        max-width: 560px;
+        height: 280px;
+        line-height: 280px;
+        margin: auto;
+    }
+
+    .modal-info {
+        width: 100%;
+    }
+}
