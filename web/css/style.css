@@ -1,0 +1,179 @@
+
+/*-----------
+    FONT
+-----------*/
+
+/* Regular normal */
+@font-face {
+    font-family:'Agenda';
+    src: url(../font/Agenda%20Medium.TTF) format('truetype');
+    font-weight:400;
+    font-style:normal;
+}
+
+/* Regular italic */
+@font-face {
+    font-family:'Agenda';
+    src: url(../font/Agenda%20Medium%20Italic.TTF) format('truetype');
+    font-weight:400;
+    font-style:italic;
+}
+
+/* Regular italic */
+@font-face {
+    font-family:'Agenda';
+    src: url(../font/Agenda%20Bold.TTF) format('truetype');
+    font-weight:700;
+    font-style:normal;
+}
+/* Bold italic */
+@font-face {
+    font-family:'Agenda';
+    src: url(../font/Agenda%20Bold.TTF) format('truetype');
+    font-weight:700;
+    font-style:italic;
+}
+
+/*-----------
+   STYLE
+-----------*/
+
+
+/*-----------
+    HOME
+-----------*/
+
+.home {
+    font-family: Agenda;
+    font-style: normal;
+    text-align: center;
+    height: 100vh;
+    background-color: #222;
+    position: relative;
+}
+
+.home h1 {
+    font-family: Agenda;
+    font-size: 144px;
+    color: rgba(255, 255, 255, 0.35);
+    font-weight: 700;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.home a {
+    font-family: Agenda;
+    font-size: 30px;
+    font-weight: 400;
+    color: #f1f1f1;
+    text-decoration: none;
+    background: url('../image/trace.png') center center no-repeat;
+    background-size: contain;
+    display: block;
+    width: 560px;
+    height: 280px;
+    line-height: 280px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.home video {
+    height: 100vh;
+}
+
+/*-----------
+   INTRO
+-----------*/
+
+.intro {
+    font-family: Agenda;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    height: 100vh;
+    background-color: #222;
+    position: relative;
+}
+
+.intro video {
+    height: 100vh;
+    width: 100vw;
+}
+
+.intro a {
+    font-family: Agenda;
+    font-size: 20px;
+    font-weight: 400;
+    color: #f1f1f1;
+    text-decoration: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+/*-----------
+    MAP
+-----------*/
+
+/*<div class="intro-map">*/
+/*<h4>{{ data.MapIntroduction }}</h4>*/
+/*<a>{{ data.MapBegin }}</a>*/
+/*</div>*/
+
+.intro-map {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #222;
+    color: #f1f1f1;
+    z-index: 3;
+    text-align: center;
+}
+
+.intro-map .wrapper {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.intro-map h4, .intro-map h5 {
+    font-family: Agenda;
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 400;
+    line-height: 60px;
+}
+
+.intro-map h4 {
+    font-size: 44px;
+}
+
+.intro-map a {
+    font-family: Agenda;
+    font-size: 30px;
+    font-weight: 400;
+    color: #f1f1f1;
+    text-decoration: none;
+    background: url('../image/trace.png') center center no-repeat;
+    background-size: contain;
+    display: block;
+    width: 560px;
+    height: 280px;
+    line-height: 280px;
+    margin: auto;
+}
+
+#map {
+    height: 100vh;
+}
+
+.gmnoprint {
+    display: none;
+}
+
+

@@ -1,0 +1,55 @@
+{% include '/partials/header.twig' %}
+
+<div class="container intro">
+    <video
+            src="media/intro.mp4"
+            autoplay="autoplay"
+            width="800"
+            height="600"
+    ></video>
+    <a href="{{ url('map') }}">{{ data.SkipIntro }}</a>
+</div>
+
+<script>
+    var player = {};
+
+    player.container    = document.querySelector('.intro');
+    player.video        = player.container.querySelector('video');
+
+    player.video.addEventListener('click', function() {
+        if (player.video.paused)
+            player.video.play();
+        else
+            player.video.pause();
+    });
+
+    // Keyshort
+
+    window.addEventListener('keydown',function(e) {
+        if(e.keyCode == 32) {
+            e.preventDefault();
+            if (player.video.paused)
+                player.video.play();
+            else
+                player.video.pause();
+        }
+    }, false);
+
+    player.video.volume = 1;
+
+    window.addEventListener('keydown',function(e) {
+        if(e.keyCode == 77) {
+            e.preventDefault();
+            if(player.video.muted || player.video.volume == 0)
+                player.video.volume = 1;
+            else
+                player.video.volume = 0;
+        }
+    }, false);
+
+    player.video.addEventListener('ended', function() {
+        document.location.href = '{{ url('map') }}';
+    });
+</script>
+
+{% include('/partials/footer.twig') %}

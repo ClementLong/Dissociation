@@ -1,0 +1,16 @@
+{
+  "EN": {
+    "Home": "DISSOCIATION",
+    "ButtonHeader": "Begin the experimentation",
+    "SkipIntro": "Skip introduction"
+  },
+  "FR": {
+    "Home": "DISSOCIATION",
+    "ButtonHeader": "Démarrer l’expérience",
+    "SkipIntro": "Passer l'introduction",
+    "Cgd" : "Condition générale d'utilisation",
+    "MapIntroduction" : "Mesrine s’échappe…",
+    "MapDetail": "Veux-tu partir à sa recherche ?",
+    "MapBegin" : "Commencer l’enquête"
+  }
+}
