@@ -1,7 +1,8 @@
 {% include '/partials/header.twig' %}
 
 <header>
-    <img src="{{ app.request.basepath }}/image/header.png" alt="1">
+    <img class="bg" src="{{ app.request.basepath }}/image/header.png" alt="1">
+    <img class="logo" src="{{ app.request.basepath }}/image/DISSOCIATION.png" alt="1">
 </header>
 
 <div class="intro-map">
@@ -14,9 +15,13 @@
 <div class="container map">
     <div id="map"></div>
 </div>
+<div class="board">
+
+</div>
 
 <footer>
-    <img src="{{ app.request.basepath }}/image/header.png" alt="1">
+    <img class="bg" src="{{ app.request.basepath }}/image/header.png" alt="1">
+    <span class="carnet">Carnet de bord <img src="{{ app.request.basepath }}/image/chevron.svg" alt="1"></span>
 </footer>
 
 
@@ -24,6 +29,11 @@
 <script type="text/javascript">
     $('.map-begin').on('click', function(){
         $('.intro-map').fadeOut(300);
+    });
+
+    $('.carnet').on('click', function() {
+        $('footer').toggleClass('footer-open');
+        $('.board').toggleClass('board-open');
     });
 
 //    var $modal_info = $('.modal-info');
