@@ -1,47 +1,44 @@
-
 /*-----------
     FONT
------------*/
-
+    -----------*/
 /* Regular normal */
+
 @font-face {
-    font-family:'Agenda';
+    font-family: 'Agenda';
     src: url(../font/Agenda%20Medium.TTF) format('truetype');
-    font-weight:400;
-    font-style:normal;
+    font-weight: 400;
+    font-style: normal;
 }
-
 /* Regular italic */
+
 @font-face {
-    font-family:'Agenda';
+    font-family: 'Agenda';
     src: url(../font/Agenda%20Medium%20Italic.TTF) format('truetype');
-    font-weight:400;
-    font-style:italic;
+    font-weight: 400;
+    font-style: italic;
 }
-
 /* Regular italic */
+
 @font-face {
-    font-family:'Agenda';
+    font-family: 'Agenda';
     src: url(../font/Agenda%20Bold.TTF) format('truetype');
-    font-weight:700;
-    font-style:normal;
+    font-weight: 700;
+    font-style: normal;
 }
 /* Bold italic */
-@font-face {
-    font-family:'Agenda';
-    src: url(../font/Agenda%20Bold.TTF) format('truetype');
-    font-weight:700;
-    font-style:italic;
-}
 
+@font-face {
+    font-family: 'Agenda';
+    src: url(../font/Agenda%20Bold.TTF) format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
 /*-----------
    STYLE
------------*/
-
-
+   -----------*/
 /*-----------
     HOME
------------*/
+    -----------*/
 
 .home {
     font-family: Agenda;
@@ -51,7 +48,6 @@
     background-color: #222;
     position: relative;
 }
-
 .home h1 {
     font-family: Agenda;
     font-size: 144px;
@@ -63,7 +59,6 @@
     transform: translateX(-50%);
     z-index: 3;
 }
-
 .home a {
     font-family: Agenda;
     font-size: 30px;
@@ -81,14 +76,12 @@
     left: 50%;
     transform: translateX(-50%);
 }
-
 .home video {
     height: 100vh;
 }
-
 /*-----------
    INTRO
------------*/
+   -----------*/
 
 .intro {
     font-family: Agenda;
@@ -99,12 +92,10 @@
     background-color: #222;
     position: relative;
 }
-
 .intro video {
     height: 100vh;
     width: 100vw;
 }
-
 .intro a {
     font-family: Agenda;
     font-size: 20px;
@@ -115,11 +106,9 @@
     bottom: 20px;
     right: 20px;
 }
-
 /*-----------
     MAP
------------*/
-
+    -----------*/
 /*<div class="intro-map">*/
 /*<h4>{{ data.MapIntroduction }}</h4>*/
 /*<a>{{ data.MapBegin }}</a>*/
@@ -134,25 +123,22 @@
     z-index: 3;
     text-align: center;
 }
-
 .intro-map .wrapper {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
 }
-
-.intro-map h4, .intro-map h5 {
+.intro-map h4,
+.intro-map h5 {
     font-family: Agenda;
     font-size: 28px;
     color: rgba(255, 255, 255, 0.95);
     font-weight: 400;
     line-height: 60px;
 }
-
 .intro-map h4 {
     font-size: 44px;
 }
-
 .intro-map a {
     font-family: Agenda;
     font-size: 30px;
@@ -167,13 +153,97 @@
     line-height: 280px;
     margin: auto;
 }
-
 #map {
     height: 100vh;
 }
-
 .gmnoprint {
     display: none;
 }
+/*-----------
+    ALBUM
+    -----------*/
 
-
+#album-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+}
+#slides {
+    height: 100%;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    z-index: -1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+.slide {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+    text-align: center;
+    background-size: 60% 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    color: #fff;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+}
+.alive {
+    visibility: visible;
+}
+.nav {
+    position: fixed;
+    z-index: 9;
+    top: 50%;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.5;
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+    text-decoration: none;
+}
+.nav:hover {
+    opacity: 1.0;
+}
+#left {
+    left: 3%;
+}
+#right {
+    right: 3%;
+}
+#close {
+    top: 2%;
+    left: 2%;
+}
+.left-side {
+    width: 15%;
+    height: 100%;
+    background-color: black;
+}
+.right-side {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    background-color: black;
+    float: right;
+}
+#count-wrapper {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    color: white;
+    font-size: 45px;
+}
