@@ -1,8 +1,22 @@
 {% include '/partials/header.twig' %}
 
-<div class="container">
-    <a href="{{ url('home') }}" class="brand-logo">Logo</a>
-    {{ data }}
+<div class="container story">
+    <div class="part">
+        <img src="{{ app.request.basepath }}/image/square1.png" alt="1">
+        <h5>{{ data }}</h5>
+    </div>
+    <div class="part">
+        <img src="{{ app.request.basepath }}/image/square2.png" alt="2">
+        <h5>Title</h5>
+    </div>
+    <div class="part">
+        <img src="{{ app.request.basepath }}/image/square3.png" alt="3">
+        <h5>Title</h5>
+    </div>
+    <div class="part">
+        <img src="{{ app.request.basepath }}/image/square4.png" alt="4">
+        <h5>Title</h5>
+    </div>
 </div>
 
 {% include('/partials/footer.twig') %}
