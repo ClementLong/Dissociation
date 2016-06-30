@@ -1,1 +1,92 @@
-7
+{% include '/partials/header.twig' %}
+
+<header>
+    <div class="wrapper-animation">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2 bar-go"></div>
+        <div class="bar bar-3 bar-go"></div>
+        <div class="bar bar-4 bar-go"></div>
+        <div class="bar bar-5 bar-go"></div>
+        <div class="bar bar-6 bar-go"></div>
+        <div class="bar bar-7 bar-go"></div>
+        <div class="bar bar-8 bar-go"></div>
+        <div class="bar bar-9 bar-go"></div>
+        <div class="bar bar-10 bar-go"></div>
+        <div class="bar bar-11 bar-go"></div>
+    </div>
+    {#<img class="bg" src="{{ app.request.basepath }}/image/header.png" alt="1">#}
+    <img class="logo" src="{{ app.request.basepath }}/image/DISSOCIATION.png" alt="logo">
+    <a class="carte"href="{{ url('map') }}"><img  src="{{ app.request.basepath }}/image/carte.svg" alt="carte"></a>
+</header>
+
+{% include('/partials/header.twig') %}
+
+<script src="{{ app.request.basepath }}/js/webcamjs-master/webcam.js"></script>
+
+<div class="sandwich1">
+    <div class="row">
+        <div class="webcam">
+            <div id="my_camera" style="width:735px; height:551px;"></div>
+            <div class="take-picture">
+                <a href="javascript:void(take_snapshot())" class="upload">Prendre la photo !</a>
+            </div>
+        </div>
+        <div class="complice">
+            <h2>Un nouveau complice de Mesrine a récemment été identifié</h2>
+            <p>Si vous prenez la photo, vous apparaitrez sur le mur des complices, et vous serez considéré comme tel. Faites attention, la police pourrait être à votre recherche !  </p>
+            <form>
+                <input type="checkbox" name="right">Je ne veux pas apparaître sur le mur des complices
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="sandwich2">
+    <div class="jambon">
+        <div class="title">LE MUR DES COMPLICES</div>
+        <div class="ketchup"></div>
+        <div class="complices" id="my_result">
+            {%  for pict in pictures %}
+                <div class="complices-wrapper">
+                    <img src="../{{pict}}" alt="">
+                    <div class="cornichons"></div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script language="JavaScript">
+    Webcam.attach( '#my_camera' );
+
+    var voixoff = document.createElement("audio");
+    voixoff.src="../../web/media/exp8.mp3";
+    voixoff.volume=0.10;
+    voixoff.play();
+
+    var obj = document.createElement("audio");
+    obj.src="../../web/media/grille.mp3";
+    obj.volume=0.10;
+    obj.autoPlay=false;
+    obj.preLoad=true;
+
+    $( ".upload" ).click(function( index ) {
+        obj.play();
+    });
+
+    function take_snapshot() {
+        Webcam.snap( function(data_uri) {
+            var image = document.createElement('div');
+            image.innerHTML = '<div class="complices-wrapper"><img src="'+data_uri+'"/><div class="cornichons"></div></div>';
+            document.getElementById('my_result').appendChild(image);
+
+            Webcam.upload( data_uri, '../../models/upload.php', function(code, text) {
+            } );
+        } );
+    }
+</script>
+
+
+{% include('/partials/footer.twig') %}
+
+{% include('/partials/footer.twig') %}

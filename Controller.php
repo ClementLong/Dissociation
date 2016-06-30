@@ -6,8 +6,12 @@
  */
 
 use Model\Text;
+use Model\getPictures;
 
 session_start();
+
+if( empty($_SESSION['carnet']) )
+    $_SESSION['carnet'] = [];
 
 // Home
 $app->get('/', function() use ($app)
@@ -15,6 +19,8 @@ $app->get('/', function() use ($app)
     $MyPrettyJSON = new Text($_SERVER['HTTP_ACCEPT_LANGUAGE']);
     $MyprettyText = $MyPrettyJSON->getText();
 
+    session_destroy();
+    $_SESSION['carnet'] = [];
     $_SESSION['experience'] = '0';
 
     // View
@@ -47,10 +53,26 @@ $app->get('/map', function() use ($app)
     $MyPrettyJSON = new Text($_SERVER['HTTP_ACCEPT_LANGUAGE']);
     $MyprettyText = $MyPrettyJSON->getText();
 
+//    $carnet = [
+//        ['url' => 'experience1'],
+//        ['url' => 'experience2'],
+//    ];
+
+    if(!empty($_SESSION['carnet']))
+        $carnet = $_SESSION['carnet'];
+    else
+        $carnet = [];
+
+    if(!empty($_SESSION['experience']))
+        $session = $_SESSION['experience'];
+    else
+        $session = '0';
+
     // View
     $data = array(
         'data' => $MyprettyText,
-        'final' => $_SESSION['experience']
+        'final' => $session,
+        'carnet' => $carnet
     );
 
     return $app['twig']->render('pages/map.twig', $data);
@@ -62,6 +84,7 @@ $app->match('/experience1/', function() use ($app)
 {
     // View
     $_SESSION['experience'] = strval(1 + intval($_SESSION['experience']));
+    $_SESSION['carnet'][] = ['url' => 'experience1'];
 
     $data = array(
         'data' => 'test',
@@ -74,7 +97,8 @@ $app->match('/experience1/', function() use ($app)
 // Story 2
 $app->match('/experience2/', function() use ($app)
 {
-
+    $_SESSION['experience'] = strval(1 + intval($_SESSION['experience']));
+    $_SESSION['carnet'][] = ['url' => 'experience2'];
     // View
     $data = array(
         'data' => 'test',
@@ -90,7 +114,7 @@ $app->match('/experience3/', function() use ($app)
 {
 
     $_SESSION['experience'] = strval(1 + intval($_SESSION['experience']));
-
+    $_SESSION['carnet'][] = ['url' => 'experience3'];
     // View
     $data = array(
         'data' => 'test',
@@ -103,9 +127,8 @@ $app->match('/experience3/', function() use ($app)
 // Story 4
 $app->match('/experience4/', function() use ($app)
 {
-
     $_SESSION['experience'] = strval(1 + intval($_SESSION['experience']));
-
+    $_SESSION['carnet'][] = ['url' => 'experience4'];
     // View
     $data = array(
         'data' => 'test',
@@ -120,6 +143,7 @@ $app->match('/experience4/', function() use ($app)
 $app->match('/experience5/', function() use ($app)
 {
     $_SESSION['experience'] = strval(1 + intval($_SESSION['experience']));
+    $_SESSION['carnet'][] = ['url' => 'experience5'];
 
     // View
     $data = array(
@@ -135,7 +159,7 @@ $app->match('/experience5/', function() use ($app)
 $app->match('/experience6/', function() use ($app)
 {
     $_SESSION['experience'] = strval(1 + intval($_SESSION['experience']));
-
+    $_SESSION['carnet'][] = ['url' => 'experience6'];
     // View
     $data = array(
         'data' => 'test',
@@ -149,9 +173,14 @@ $app->match('/experience6/', function() use ($app)
 // Story 7
 $app->match('/experience7/', function() use ($app)
 {
+    $_SESSION['experience'] = strval(1 + intval($_SESSION['experience']));
+    $_SESSION['carnet'][] = ['url' => 'experience7'];
     // View
+    $getPicturesModel = new getPictures();
+    $getPictures = $getPicturesModel->getPictures();
+
     $data = array(
-        'data' => 'test',
+        'pictures' => $getPictures
     );
 
     return $app['twig']->render('pages/ex7.twig', $data);
@@ -162,6 +191,8 @@ $app->match('/experience7/', function() use ($app)
 // Story 8
 $app->match('/experience8/', function() use ($app)
 {
+    $_SESSION['experience'] = strval(1 + intval($_SESSION['experience']));
+    $_SESSION['carnet'][] = ['url' => 'experience8'];
     // View
     $data = array(
         'data' => 'test',
@@ -175,6 +206,8 @@ $app->match('/experience8/', function() use ($app)
 // Story 9
 $app->match('/experience9/', function() use ($app)
 {
+    $_SESSION['experience'] = strval(1 + intval($_SESSION['experience']));
+    $_SESSION['carnet'][] = ['url' => 'experience9'];
     // View
     $data = array(
         'data' => 'test',
@@ -188,6 +221,8 @@ $app->match('/experience9/', function() use ($app)
 // Story 10
 $app->match('/experience10/', function() use ($app)
 {
+    $_SESSION['experience'] = strval(1 + intval($_SESSION['experience']));
+    $_SESSION['carnet'][] = ['url' => 'experience10'];
     // View
     $data = array(
         'data' => 'test',

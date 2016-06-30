@@ -11,6 +11,7 @@ error_reporting(-1);
 // Add autoload
 require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__ . '/../models/Text.class.php';
+require_once __DIR__ . '/../models/getPictures.class.php';
 
 // Config
 $app = new Silex\Application();

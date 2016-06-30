@@ -77,6 +77,18 @@ header .logo {
     width: 25%;
 }
 
+header .carte {
+    position: absolute;
+    top: 12px;
+    left: 27%;
+    width: 35px;
+}
+
+header .carte img{
+    max-width: 100%;
+    transform: rotate(-3deg);
+}
+
 header .wrapper-animation {
     position: absolute;
     width: 102%;
@@ -403,6 +415,10 @@ footer .carnet .arrow-on {
     width: 100vw;
 }
 
+.video-fix {
+    transform: scale(1.5);
+}
+
 .intro a {
     font-family: Agenda;
     font-size: 20px;
@@ -472,7 +488,7 @@ footer .carnet .arrow-on {
 
 .board {
     position: relative;
-    height: 100vh;
+    height: 75vh;
     background-color: #111;
     transform: translateY(-0px);
     z-index: 2;
@@ -480,6 +496,20 @@ footer .carnet .arrow-on {
     overflow: scroll;
     font-size: 0;
     padding-top: 25vh;
+}
+
+.board .cgd-link {
+    color: #8a8989;
+    font-family: Agenda;
+    font-weight: 300;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    transform: translateX(-50%);
 }
 
 .board-open {
@@ -929,4 +959,246 @@ footer .carnet .arrow-on {
     width: 100%;
     overflow: hidden;
     height: 100%;
+}
+
+.cgd {
+    padding: 10%;
+    background-color: #111;
+    color: #f1f1f1;
+    font-family: 'Proxyma';
+}
+
+
+.help {
+    opacity: 0;
+}
+
+.map-shadow {
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/shadow.png');
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    background-size: cover;
+}
+
+.help-point {
+    position:absolute;
+    z-index: 200;
+    left: 60vw;
+    top: 40vh;
+}
+
+.help-arrow-1 {
+    position:absolute;
+    z-index: 200;
+    left: 21vw;
+    top: 40vh;
+}
+
+.help-arrow-1 img {
+    height: 5.5%;
+}
+
+.help-text-1 {
+    position:absolute;
+    z-index: 200;
+    left: 10vw;
+    top: 48vh;
+    color: white;
+    font-family: 'Agenda';
+}
+
+.help-arrow-2 {
+    position:absolute;
+    z-index: 200;
+    right: 10vw;
+    bottom: 15vh;
+}
+
+.help-arrow-2 img {
+    height: 5.5%;
+    transform: rotate(35deg);
+}
+
+.help-text-2 {
+    position:absolute;
+    z-index: 200;
+    right: 12vw;
+    bottom: 24vh;
+    color: white;
+    font-family: 'Agenda';
+}
+
+@media (max-width:1024px) {
+    .help-arrow-1 {
+        left: 30vw;
+    }
+
+    .help-text-1 {
+        left: 25vw;
+    }
+
+    .help-point {
+        left: 62vw;
+    }
+}
+
+.on-off {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+
+/*-----------
+    EXP 8
+    -----------*/
+
+.sandwich1 {
+    width: 100%;
+    height: 100vh;
+    display:block;
+}
+
+.webcam {
+    display: inline-block;
+    width: 735px;
+    height: 633px;
+    background-color: black;
+    margin-left: 5vw;
+    margin-top: 15vh;
+}
+
+.take-picture {
+    background-color: #EC644B;
+    width: 735px;
+    height: 81px;
+    font-family: 'Agenda';
+    font-size: 40px;
+    text-align: center;
+    line-height: 81px;
+}
+
+.take-picture a  {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.complice {
+    display:inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin-top: 15vh;
+    margin-left: 2vw;
+}
+
+.complice h2 {
+    font-family: 'Agenda';
+    font-weight: 700;
+    font-size: 35px;
+}
+
+.complice p, .complice form {
+    font-family: 'Agenda-Light';
+    margin-top: 5vh;
+    font-size: 25px;
+    line-height: 45px;
+}
+
+.complices {
+    margin-top: 5vh;
+}
+
+.complices-wrapper {
+    width: 420px;
+    height: 316px;
+    display: inline-block;
+    position: relative;
+}
+
+.complices-wrapper img {
+    width: 420px;
+    height: 316px;
+}
+
+.complices > div img {
+    width: 420px;
+    height: 316px;
+}
+
+.complices-wrapper > div {
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+}
+
+.complices > div {
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+}
+
+.complices-wrapper .cornichons {
+    width: 420px;
+    height: 316px;
+    background: url('../image/barreaux.png') center center no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.sandwich2 {
+    width: 110%;
+    height: 100%;
+    transform: rotate(2deg);
+    transform-origin: top left;
+    background-color: black;
+    padding-bottom: 5%;
+}
+
+.jambon {
+    width: 85%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(-2deg);
+}
+
+.jambon .title {
+    color: white;
+    font-family: 'Agenda';
+    font-weight: 700;
+    font-size: 50px;
+    padding-top: 5vh;
+    margin-left: 12.5%;
+}
+
+.jambon .ketchup {
+    background-color: #EC644B;
+    width: 10vw;
+    height: 11px;
+    margin-left: 37.4vw;
+}
+
+@media (max-width: 1580px) {
+    .complice {
+        width: 100%;
+    }
+
+    .complice h2 {
+        font-size: 30px;
+    }
+
+    .complice p, .complice form {
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+    .sandwich1 {
+        width: 100%;
+        height: 100%;
+        display: block;
+        text-align: center;
+    }
 }
