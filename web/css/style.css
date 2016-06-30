@@ -634,7 +634,12 @@ footer .carnet .arrow-on {
         background-size: cover;
         vertical-align: top;
         transition: 0.4s;
-        height: 25vh;
+        height: 50vh;
+    }
+
+    .story .part img {
+        margin-top: 10px;
+        margin-bottom: 20px;
     }
 
     .story .open {
