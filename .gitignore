@@ -1,4 +1,8 @@
 .idea
 vendor
+<<<<<<< HEAD
 web/medi
 web/.htaccess
+=======
+web/media
+>>>>>>> master

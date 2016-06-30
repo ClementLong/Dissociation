@@ -21,7 +21,8 @@ $app->get('/', function() use ($app)
     return $app['twig']->render('pages/home.twig', $data);
 })->bind('home');
 
-// Home
+
+// Intro
 $app->get('/intro', function() use ($app)
 {
     $MyPrettyJSON = new Text($_SERVER['HTTP_ACCEPT_LANGUAGE']);
@@ -35,7 +36,8 @@ $app->get('/intro', function() use ($app)
     return $app['twig']->render('pages/intro.twig', $data);
 })->bind('intro');
 
-// Home
+
+// Map
 $app->get('/map', function() use ($app)
 {
     $MyPrettyJSON = new Text($_SERVER['HTTP_ACCEPT_LANGUAGE']);
@@ -43,7 +45,8 @@ $app->get('/map', function() use ($app)
 
     // View
     $data = array(
-        'data' => $MyprettyText
+        'data' => $MyprettyText,
+        'final' => '0'
     );
 
     return $app['twig']->render('pages/map.twig', $data);
@@ -51,17 +54,29 @@ $app->get('/map', function() use ($app)
 
 
 // Story
-$app->match('/story/{slug}', function($slug) use ($app)
+$app->match('/story1/', function() use ($app)
 {
     // View
     $data = array(
-        'data' => $slug,
+        'data' => 'test',
     );
 
     return $app['twig']->render('pages/story.twig', $data);
 })
-    ->assert('type', '/w')
-    ->bind('story');
+    ->bind('story1');
+
+// Story
+$app->match('/story2/', function() use ($app)
+{
+    // View
+    $data = array(
+        'data' => 'test',
+    );
+
+    return $app['twig']->render('pages/story2.twig', $data);
+})
+    ->bind('story2');
+
 
 // CGD
 $app->match('/cgd', function() use ($app)
@@ -76,6 +91,7 @@ $app->match('/cgd', function() use ($app)
 
     return $app['twig']->render('pages/cgd.twig', $data);
 })
+<<<<<<< HEAD
     ->bind('story');
 
 // Experiences 
@@ -170,3 +186,15 @@ $app->match('/experience/{id}', function($id) use ($app) {
 //        die($e);
 //    return $app['twig']->render('pages/error.twig');
 //});
+=======
+    ->bind('cgd');
+
+
+// Error
+$app->error(function (\Exception $e, $code) use ($app)
+{
+    if($app['debug'] == true)
+        die($e);
+    return $app['twig']->render('pages/error.twig');
+});
+>>>>>>> master

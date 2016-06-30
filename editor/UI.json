@@ -9,8 +9,36 @@
     "ButtonHeader": "Démarrer l’expérience",
     "SkipIntro": "Passer l'introduction",
     "Cgd" : "Condition générale d'utilisation",
+<<<<<<< HEAD
     "MapIntroduction" : "Mais qui était vraiment Mesrine ?",
     "MapDetail": "En tant que journaliste, vous décidez d'enquêter afin de lever le voile sur les différentes facettes de cet homme si mystérieux.",
     "MapBegin" : "Commencer l’enquête"
+=======
+    "MapIntroduction" : "Mesrine s’échappe…",
+    "MapDetail": "Veux-tu partir à sa recherche ?",
+    "MapBegin" : "Commencer l’enquête",
+    "Histoire1Titre" : "1Titre",
+    "Histoire1Text" : "1Text",
+    "Histoire2Titre" : "2Titre",
+    "Histoire2Text" : "2Text",
+    "Histoire3Titre" : "3Titre",
+    "Histoire3Text" : "3Text",
+    "Histoire4Titre" : "4Titre",
+    "Histoire4Text" : "4Text",
+    "Histoire5Titre" : "5Titre",
+    "Histoire5Text" : "5Text",
+    "Histoire6Titre" : "6Titre",
+    "Histoire6Text" : "6Text",
+    "Histoire7Titre" : "7Titre",
+    "Histoire7Text" : "7Text",
+    "Histoire8Titre" : "8Titre",
+    "Histoire8Text" : "8Text",
+    "Histoire9Titre" : "9Titre",
+    "Histoire9Text" : "9Text",
+    "Histoire10Titre" : "10Titre",
+    "Histoire10Text" : "10Text",
+    "Histoire11Titre" : "11Titre",
+    "Histoire11Text" : "11Text"
+>>>>>>> master
   }
 }
