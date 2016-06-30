@@ -1,0 +1,77 @@
+{% include('/partials/header.twig') %}
+
+<header>
+    <div class="wrapper-animation">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2 bar-go"></div>
+        <div class="bar bar-3 bar-go"></div>
+        <div class="bar bar-4 bar-go"></div>
+        <div class="bar bar-5 bar-go"></div>
+        <div class="bar bar-6 bar-go"></div>
+        <div class="bar bar-7 bar-go"></div>
+        <div class="bar bar-8 bar-go"></div>
+        <div class="bar bar-9 bar-go"></div>
+        <div class="bar bar-10 bar-go"></div>
+        <div class="bar bar-11 bar-go"></div>
+    </div>
+    {#<img class="bg" src="{{ app.request.basepath }}/image/header.png" alt="1">#}
+    <img class="logo" src="{{ app.request.basepath }}/image/DISSOCIATION.png" alt="1">
+</header>
+
+<div class="wrapper-de">
+    <div class="screenLeft">
+    </div>
+    <div class="screenRight">
+        <h2>« Je n'ai pas peur »</h2>
+        <p>«<span>U</span>n homme aux abois, c'est un homme qui a peur et je n'ai pas peur. Actuellement j'ai volé deux mois et demi à la vie. Dans l'endroit où j'étais, j'étais mort, certain en tout cas de ne pas ressortir vivant. Qu'est-ce qui reste d'un individu après vingt ans de prison? Il faut avoir connu l'isolement, on oublie le goût, on perd l'ouïe, on ne sait plus parler. Si tu as envie d'un oeuf à la coque, tu restes vingt ans avec ton envie ; si tu vois un oiseau derrière la vitre parce que la vitre est bloquée, tu restes vingt ans sans pouvoir lui jeter une miette de pain. Et pourtant, il est impossible de ne pas voir la vie ; un oiseau, un arbre ou une femme. En prison, j'avais une envie végétale. Aujourd'hui, je suis libre mais c'est une fausse liberté. La taule me colle encore à la peau. Elle est sur moi. Les barreaux sont toujours là. Je suis toujours prisonnier. Si je me suis évadé, c'est pour ne pas sortir en ruines. Je ne vis pas sur les nerfs. Je ne sors jamais et on ne me voit pas dans les rues, c'est tout. Je suis le gibier et j'ai des milliers de chasseurs autour de moi. La chasse est ouverte et elle ne se fermera pas. Par contre, où que je sois, je suis armé. J'ai toujours une grenade et deux armes sur moi. Aux waters, sous la douche ou sous l'oreiller, elles ne me quittent pas. Si dans trois secondes j'entends crier « Police !» à la porte, je dois avoir le « calibre » à portée de main. C'est ma seconde vie.  »</p>
+    </div>
+</div>
+<div class="wrapper2">
+    <div class="screenThree">
+        <h2>« Je n'ai pas peur »</h2>
+        <p>«<span>U</span>n homme aux abois, c'est un homme qui a peur et je n'ai pas peur. Actuellement j'ai volé deux mois et demi à la vie. Dans l'endroit où j'étais, j'étais mort, certain en tout cas de ne pas ressortir vivant. Qu'est-ce qui reste d'un individu après vingt ans de prison? Il faut avoir connu l'isolement, on oublie le goût, on perd l'ouïe, on ne sait plus parler. Si tu as envie d'un oeuf à la coque, tu restes vingt ans avec ton envie ; si tu vois un oiseau derrière la vitre parce que la vitre est bloquée, tu restes vingt ans sans pouvoir lui jeter une miette de pain. Et pourtant, il est impossible de ne pas voir la vie ; un oiseau, un arbre ou une femme. En prison, j'avais une envie végétale. Aujourd'hui, je suis libre mais c'est une fausse liberté. La taule me colle encore à la peau. Elle est sur moi. Les barreaux sont toujours là. Je suis toujours prisonnier. Si je me suis évadé, c'est pour ne pas sortir en ruines. Je ne vis pas sur les nerfs. Je ne sors jamais et on ne me voit pas dans les rues, c'est tout. Je suis le gibier et j'ai des milliers de chasseurs autour de moi. La chasse est ouverte et elle ne se fermera pas. Par contre, où que je sois, je suis armé. J'ai toujours une grenade et deux armes sur moi. Aux waters, sous la douche ou sous l'oreiller, elles ne me quittent pas. Si dans trois secondes j'entends crier « Police !» à la porte, je dois avoir le « calibre » à portée de main. C'est ma seconde vie.  »</p>
+    </div>
+    <div class="screenFour">
+        <img src="{{ app.request.basepath }}/image/mesrine1.png" alt="">
+        <img src="{{ app.request.basepath }}/image/mesrine2.png" alt="">
+    </div>
+</div>
+
+<audio src="{{ app.request.basepath }}/media/9.mp3"></audio>
+<script>
+    // Song
+    var player = {};
+
+    player.video = document.querySelector('audio');
+
+    // Keyshort
+
+    window.addEventListener('keydown',function(e) {
+        if(e.keyCode == 32) {
+            e.preventDefault();
+            if (player.video.paused)
+                player.video.play();
+            else
+                player.video.pause();
+        }
+    }, false);
+
+    player.video.volume = 1;
+
+    window.addEventListener('keydown',function(e) {
+        if(e.keyCode == 77) {
+            e.preventDefault();
+            if(player.video.muted || player.video.volume == 0)
+                player.video.volume = 0.5;
+            else
+                player.video.volume = 0;
+        }
+    }, false);
+
+    window.setTimeout(function(){
+        player.video.play();
+    }, 200);
+</script>
+
+
+{% include('/partials/footer.twig') %}

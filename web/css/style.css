@@ -34,7 +34,7 @@
     font-style:italic;
 }
 
-/* Regular lighy */
+/* Regular light */
 @font-face {
     font-family:'Agenda';
     src: url(../font/Agenda%20Light.TTF) format('truetype');
@@ -267,6 +267,7 @@ footer .carnet .arrow {
     top: -5px;
     transform: rotate(0deg);
     transition: 0.47s;
+    margin-left: 10px;
 }
 
 footer .carnet .arrow-on {
@@ -425,6 +426,7 @@ footer .carnet .arrow-on {
     color: #f1f1f1;
     z-index: 4;
     text-align: center;
+    top: 0;
 }
 
 .intro-map .wrapper {
@@ -494,7 +496,7 @@ footer .carnet .arrow-on {
 .board-hover {
     height: 500px;
     width: 100%;
-    background-color: rgba(17, 17, 17, 0.7);
+    background-color: rgba(17, 17, 17, 0.52);
     position: relative;
     z-index: 10;
     top: -500px;
@@ -523,6 +525,7 @@ footer .carnet .arrow-on {
 }
 
 .board .go-final {
+    display: block;
     font-family: Agenda;
     font-size: 21px;
     color: #ec644b;
@@ -654,4 +657,276 @@ footer .carnet .arrow-on {
         overflow: scroll;
     }
 
+}
+
+/*-----------
+    ALBUM
+    -----------*/
+
+#album-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+}
+#slides {
+    height: 100%;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    z-index: -1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+.slide {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+    text-align: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    color: #fff;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+}
+.alive {
+    visibility: visible;
+}
+.nav {
+    position: fixed;
+    z-index: 9;
+    top: 50%;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.5;
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+    text-decoration: none;
+}
+.nav:hover {
+    opacity: 1.0;
+}
+#left {
+    left: 3%;
+}
+#right {
+    right: 3%;
+}
+#close {
+    top: 2%;
+    left: 2%;
+}
+.left-side {
+    width: 15%;
+    height: 100%;
+    background-color: black;
+}
+.right-side {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    background-color: black;
+    float: right;
+}
+#count-wrapper {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    color: white;
+    font-size: 45px;
+}
+/*-----------
+    EXP 7
+    -----------*/
+
+.left,
+.right {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+.left {
+    -webkit-clip-path: polygon(0 0, 55% 0, 45% 100%, 0 100%);
+    clip-path: polygon(0 0, 55% 0, 45% 100%, 0 100%);
+    width: 55%;
+}
+.left video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+}
+.right {
+    -webkit-clip-path: polygon(55% 0, 100% 0%, 100% 100%, 45% 100%);
+    clip-path: polygon(55% 0, 100% 0%, 100% 100%, 45% 100%);
+    overflow: hidden;
+    right: 0;
+    box-shadow: none;
+}
+.right video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+}
+.lside {
+    width: 5%;
+    opacity: 0;
+    top: 40%;
+}
+.rside {
+    position: absolute;
+    right: 0;
+    float: right;
+    opacity: 0;
+    top: 50%;
+}
+/*-----------
+    EXP 9
+    -----------*/
+
+.wrapper-de {
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+    padding-top: 50px;
+}
+.screenLeft {
+    width: 45%;
+    float: left;
+    height: 100%;
+    background-image: url(../image/parismatch.png);
+    background-size: cover;
+}
+.screenLeft img {
+    width: 45vw;
+    height: 100%;
+}
+.screenRight {
+    width: 45%;
+    float: right;
+    margin-right: 4vw;
+}
+.screenRight p {
+    text-align: justify;
+    font-family: 'Proxyma';
+    font-size: 2.5vh;
+    line-height: 3.1vh;
+    margin: 30px;
+}
+@media (max-width: 800px) {
+    .wrapper-de {
+        overflow: visible;
+    }
+    .screenLeft {
+        width: 100%;
+        float: left;
+        text-align: center;
+    }
+    .screenRight {
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+    }
+    .screenRight p {
+        font-size: 1.8vh;
+        line-height: 2.1vh;
+        margin: 0.5vh;
+    }
+    .screenRight h2 {
+        font-size: 2vh;
+    }
+    .screenRight span {
+        font-size: 3vh;
+    }
+    .screenLeft img {
+        width: 100%;
+        height: auto;
+        display: inline-block;
+    }
+}
+.screenRight h2 {
+    font-family: 'Agenda';
+    font-weight: 700;
+    font-size: 4vh;
+    padding-bottom: 3%;
+    margin: 2vw;
+    margin-top: 3vh;
+}
+.screenRight span {
+    font-size: 5vh;
+    font-weight: 700;
+    color: #EC644B;
+}
+
+.screenThree {
+    padding-top: 3vh;
+}
+
+.screenThree h2 {
+    font-family: 'Agenda';
+    font-weight: 700;
+    font-size: 5vh;
+    margin: 3vw;
+    margin-top: 4vh;
+    text-align: center;
+}
+
+.screenThree p {
+    font-family: 'Proxyma';
+    font-size: 2.5vh;
+    line-height: 3.9vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.screenLeft2 {
+    width: 50%;
+    float: left;
+    height: 100%;
+}
+
+.wrapper2 img {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+}
+
+.screenFour {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    font-size: 0;
+    text-align: center;
+    margin-top: 3vh;
+}
+
+.wrapper2 {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
 }

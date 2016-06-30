@@ -1,0 +1,72 @@
+{% include '/partials/header.twig' %}
+
+<header>
+    <div class="wrapper-animation">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2 bar-go"></div>
+        <div class="bar bar-3 bar-go"></div>
+        <div class="bar bar-4 bar-go"></div>
+        <div class="bar bar-5 bar-go"></div>
+        <div class="bar bar-6 bar-go"></div>
+        <div class="bar bar-7 bar-go"></div>
+        <div class="bar bar-8 bar-go"></div>
+        <div class="bar bar-9 bar-go"></div>
+        <div class="bar bar-10 bar-go"></div>
+        <div class="bar bar-11 bar-go"></div>
+    </div>
+    {#<img class="bg" src="{{ app.request.basepath }}/image/header.png" alt="1">#}
+    <img class="logo" src="{{ app.request.basepath }}/image/DISSOCIATION.png" alt="1">
+</header>
+
+<div class="container intro">
+    <video
+            src="{{ app.request.basepath }}/media/intro.mp4"
+            autoplay="autoplay"
+            width="800"
+            height="600"
+    ></video>
+</div>
+
+<script>
+    var player = {};
+
+    player.container    = document.querySelector('.intro');
+    player.video        = player.container.querySelector('video');
+
+    player.video.addEventListener('click', function() {
+        if (player.video.paused)
+            player.video.play();
+        else
+            player.video.pause();
+    });
+
+    // Keyshort
+
+    window.addEventListener('keydown',function(e) {
+        if(e.keyCode == 32) {
+            e.preventDefault();
+            if (player.video.paused)
+                player.video.play();
+            else
+                player.video.pause();
+        }
+    }, false);
+
+    player.video.volume = 1;
+
+    window.addEventListener('keydown',function(e) {
+        if(e.keyCode == 77) {
+            e.preventDefault();
+            if(player.video.muted || player.video.volume == 0)
+                player.video.volume = 1;
+            else
+                player.video.volume = 0;
+        }
+    }, false);
+
+    player.video.addEventListener('ended', function() {
+        document.location.href = '{{ url('map') }}';
+    });
+</script>
+
+{% include('/partials/footer.twig') %}
