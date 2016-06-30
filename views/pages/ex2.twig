@@ -1,0 +1,78 @@
+{% include('/partials/header.twig') %}
+
+<header>
+    <div class="wrapper-animation">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2 bar-go"></div>
+        <div class="bar bar-3 bar-go"></div>
+        <div class="bar bar-4 bar-go"></div>
+        <div class="bar bar-5 bar-go"></div>
+        <div class="bar bar-6 bar-go"></div>
+        <div class="bar bar-7 bar-go"></div>
+        <div class="bar bar-8 bar-go"></div>
+        <div class="bar bar-9 bar-go"></div>
+        <div class="bar bar-10 bar-go"></div>
+        <div class="bar bar-11 bar-go"></div>
+    </div>
+    {#<img class="bg" src="{{ app.request.basepath }}/image/header.png" alt="1">#}
+    <img class="logo" src="{{ app.request.basepath }}/image/DISSOCIATION.png" alt="1">
+</header>
+
+<div id="album-wrapper">
+    <ol id="slides" start="1">
+        <li class="slide color-0 alive" style="background-image:url({{ app.request.basepath }}/image/album/2.1.jpg);"></li>
+        <li class="slide color-1" style="background-image:url({{ app.request.basepath }}/image/album/2.2.jpg);"></li>
+        <li class="slide color-2" style="background-image:url({{ app.request.basepath }}/image/album/2.3.png);"></li>
+        <li class="slide color-3" style="background-image:url({{ app.request.basepath }}/image/album/2.4.jpg);"></li>
+        <li class="slide color-4" style="background-image:url({{ app.request.basepath }}/image/album/2.5.jpg);"></li>
+    </ol>
+    <div class="close">
+        <a class="nav fa fa-times fa-2x" id="close" aria-hidden="true" href="{{ url ('map')}}"></a>
+    </div>
+    <div class="left-side">
+        <span class="nav fa fa-chevron-left fa-3x" id="left"></span>
+    </div>
+    <div class="right-side">
+        <span class="nav fa fa-chevron-right fa-3x" id="right"></span>
+    </div>
+    <div id="count-wrapper"><span id="count">1</span>/5</div>
+</div>
+
+<audio src="{{ app.request.basepath }}/media/2.mp3"></audio>
+<script type="text/javascript" src="{{ app.request.basepath }}/js/album.js"></script>
+<script>
+    // Song
+    var player = {};
+
+    player.video = document.querySelector('audio');
+
+    // Keyshort
+
+    window.addEventListener('keydown',function(e) {
+        if(e.keyCode == 32) {
+            e.preventDefault();
+            if (player.video.paused)
+                player.video.play();
+            else
+                player.video.pause();
+        }
+    }, false);
+
+    player.video.volume = 1;
+
+    window.addEventListener('keydown',function(e) {
+        if(e.keyCode == 77) {
+            e.preventDefault();
+            if(player.video.muted || player.video.volume == 0)
+                player.video.volume = 1;
+            else
+                player.video.volume = 0;
+        }
+    }, false);
+
+    window.setTimeout(function(){
+        player.video.play();
+    }, 200);
+</script>
+
+{% include('/partials/footer.twig') %}

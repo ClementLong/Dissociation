@@ -1,0 +1,41 @@
+{% include('/partials/header.twig') %}
+
+<header>
+    <div class="wrapper-animation">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2 bar-go"></div>
+        <div class="bar bar-3 bar-go"></div>
+        <div class="bar bar-4 bar-go"></div>
+        <div class="bar bar-5 bar-go"></div>
+        <div class="bar bar-6 bar-go"></div>
+        <div class="bar bar-7 bar-go"></div>
+        <div class="bar bar-8 bar-go"></div>
+        <div class="bar bar-9 bar-go"></div>
+        <div class="bar bar-10 bar-go"></div>
+        <div class="bar bar-11 bar-go"></div>
+    </div>
+    {#<img class="bg" src="{{ app.request.basepath }}/image/header.png" alt="1">#}
+    <img class="logo" src="{{ app.request.basepath }}/image/DISSOCIATION.png" alt="1">
+</header>
+
+<div class="left">
+    <video class="video"
+           src="{{ app.request.basepath }}/media/intro.mp4"
+    ></video>
+</div>
+<div class="right">
+    <video class ="video"
+           src="{{ app.request.basepath }}/media/test.mp4"
+    ></video>
+</div>
+
+<div >
+    <span class=" lside nav fa fa-chevron-left fa-3x" id="left"></span>
+</div>
+<div >
+    <span class=" rside nav fa fa-chevron-right fa-3x" id="left"></span>
+</div>
+
+<script type="text/javascript" src="{{ app.request.basepath }}/js/script.js"></script>
+
+{% include('/partials/footer.twig') %}

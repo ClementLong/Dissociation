@@ -19,4 +19,5 @@ class Text
         $UI = json_decode(file_get_contents(__DIR__ . '/../editor/UI.json'), -1);
         return $UI[$this->language];
     }
+
 }
