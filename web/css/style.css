@@ -274,6 +274,34 @@ footer .carnet .arrow-on {
     transition: 0.47s;
 }
 
+@media only screen and (max-width:1024px) {
+
+    footer .carnet {
+        width: 80%;
+    }
+
+    .board-pict {
+        width: 33.3% !important;
+    }
+
+    header .wrapper-animation .bar-go {
+        width: 120%;
+        transition: 1s;
+        transition-timing-function: ease-in;
+    }
+
+    header .wrapper-animation .bar-1 {
+        width: 120%;
+    }
+
+}
+
+@media only screen and (max-width:512px) {
+    .board-pict {
+        width: 50% !important;
+    }
+
+}
 
 /*-----------
     HOME
@@ -460,16 +488,17 @@ footer .carnet .arrow-on {
 .board-pict {
     display: inline-block;
     width: 25%;
+    overflow: hidden;
 }
 
 .board-hover {
-    height: 240px;
+    height: 500px;
     width: 100%;
     background-color: rgba(17, 17, 17, 0.7);
     position: relative;
     z-index: 10;
-    top: -240px;
-    margin-bottom: -240px;
+    top: -500px;
+    margin-bottom: -500px;
     transition: 0.2s;
 }
 
@@ -592,6 +621,37 @@ footer .carnet .arrow-on {
     padding: 20px;
 }
 
+
 @media only screen and (max-width:1024px) {
+    .story .part {
+        width: 100%;
+        font-family: Agenda;
+        font-size: 30px;
+        font-weight: 400;
+        color: #f1f1f1;
+        background-color: #111111;
+        text-align: center;
+        background-size: cover;
+        vertical-align: top;
+        transition: 0.4s;
+        height: 50vh;
+    }
+
+    .story .part img {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .story .open {
+        width: 100% !important;
+        background-size: contain !important;;
+        background-repeat: no-repeat !important;;
+        transition: 0.4s;
+        height: 100vh;
+    }
+
+    .story {
+        overflow: scroll;
+    }
 
 }
